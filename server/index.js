@@ -7,11 +7,11 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-app.use('/posts', postRoutes);
-
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
 app.use(cors());
+
+app.use('/posts', postRoutes);
 
 // database access: dbuser:2EIEBu6g2FuttPP5
 // connection string: mongodb+srv://<username>:<password>@memories-project-cluste.xcwlmmu.mongodb.net/?retryWrites=true&w=majority
