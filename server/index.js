@@ -13,10 +13,7 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
-// database access: dbuser:2EIEBu6g2FuttPP5
-// connection string: mongodb+srv://<username>:<password>@memories-project-cluste.xcwlmmu.mongodb.net/?retryWrites=true&w=majority
-
-const CONNECTION_URL= 'mongodb+srv://dbuser:2EIEBu6g2FuttPP5@memories-project-cluste.xcwlmmu.mongodb.net/?retryWrites=true&w=majority'
+const CONNECTION_URL = process.env.MONGODB_CONN;
 const PORT = process.env.PORT || 5000;
 
 // original connection string could be depricated:
